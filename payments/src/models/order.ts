@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
-import { OrderStatus } from "@sgtickets/common";
-import { updateIfCurrentPlugin } from "mongoose-update-if-current";
+import mongoose from 'mongoose';
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
+import { OrderStatus } from '@sgtickets/common';
 
 interface OrderAttrs {
   id: string;
@@ -46,7 +46,7 @@ const orderSchema = new mongoose.Schema(
   }
 );
 
-orderSchema.set("versionKey", "version"); // override mongoose and tell it not use __v flag
+orderSchema.set('versionKey', 'version');
 orderSchema.plugin(updateIfCurrentPlugin);
 
 orderSchema.statics.build = (attrs: OrderAttrs) => {
@@ -59,5 +59,6 @@ orderSchema.statics.build = (attrs: OrderAttrs) => {
   });
 };
 
-const Order = mongoose.model<OrderDoc, OrderModel>("Order", orderSchema);
+const Order = mongoose.model<OrderDoc, OrderModel>('Order', orderSchema);
+
 export { Order };

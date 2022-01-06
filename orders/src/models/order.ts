@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 import { OrderStatus } from '@sgtickets/common';
 import { TicketDoc } from './ticket';
-import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 export { OrderStatus };
 
@@ -16,7 +16,7 @@ interface OrderDoc extends mongoose.Document {
   userId: string;
   status: OrderStatus;
   expiresAt: Date;
-  ticket: TicketDoc | any;
+  ticket: TicketDoc;
   version: number;
 }
 

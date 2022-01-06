@@ -23,4 +23,4 @@ The app allows users to buy tickets for events.
 ### TODO
 
 - Improve the UI, UX and visuals
-- Improve tests
+- Add a CI/CD pipeline
